@@ -1,0 +1,3 @@
+TAG POS=1 TYPE=DIV ATTR=CLASS:"*cell-body tablecell-date sortable column-sorted*"&&TXT:*,* EXTRACT=TXT
+SET !EXTRACT EVAL("'{{!EXTRACT}}'.replace(/(Scheduled|Published)/g, '').trim();")
+PROMPT {{!EXTRACT}}

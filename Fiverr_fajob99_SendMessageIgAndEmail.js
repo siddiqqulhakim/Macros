@@ -1,0 +1,62 @@
+var macro;
+macro =  "CODE:";
+macro +=  "SET !DATASOURCE {{file}}" + "\n"; 
+macro +=  "SET !DATASOURCE_LINE {{i}}" + "\n"; 
+macro +=  `SET !ERRORIGNORE YES` + "\n"; 
+macro +=  `SET !REPLAYSPEED SLOW` + "\n"; 
+macro +=  `TAB T=1` + "\n"; 
+macro +=  `URL GOTO=https://www.instagram.com/{{!COL2}}` + "\n"; 
+macro +=  `WAIT SECONDS=7` + "\n"; 
+macro +=  `TAG POS=1 TYPE=A ATTR=ROLE:link&&HREF:"*/p/*"` + "\n"; 
+macro +=  `WAIT SECONDS=3` + "\n"; 
+macro +=  `SET !CLIPBOARD {{comment}} ` + "\n"; 
+macro +=  `EVENT TYPE=CLICK SELECTOR="textarea[placeholder*='Add a comment']" BUTTON=0` + "\n"; 
+macro +=  `EVENT TYPE=KEYPRESS SELECTOR="textarea[placeholder*='Add a comment']" CHAR="v" MODIFIERS="ctrl"` + "\n"; 
+macro +=  `WAIT SECONDS=3` + "\n"; 
+macro +=  `TAG POS=1 TYPE=DIV ATTR=ROLE:button&&TXT:Post` + "\n"; 
+macro +=  `WAIT SECONDS=7` + "\n"; 
+macro +=  `URL GOTO=https://www.instagram.com/{{!COL2}}` + "\n"; 
+macro +=  `WAIT SECONDS=7` + "\n"; 
+macro +=  `TAG POS=1 TYPE=DIV ATTR=ROLE:button&&TXT:Message` + "\n"; 
+macro +=  `WAIT SECONDS=10` + "\n"; 
+macro +=  `SET !CLIPBOARD {{dm}} ` + "\n"; 
+macro +=  `EVENT TYPE=CLICK SELECTOR="textarea[placeholder='Message...']" BUTTON=0` + "\n"; 
+macro +=  `EVENT TYPE=KEYPRESS SELECTOR="textarea[placeholder='Message...']" CHAR="v" MODIFIERS="ctrl"` + "\n"; 
+macro +=  `WAIT SECONDS=3` + "\n"; 
+macro +=  `TAG POS=1 TYPE=BUTTON ATTR=TYPE:button&&TXT:Send` + "\n"; 
+macro +=  `WAIT SECONDS=10` + "\n"; 
+macro +=  `URL GOTO=https://mail.google.com/mail` + "\n"; 
+macro +=  `EVENT TYPE=KEYPRESS SELECTOR="body" KEY=116 MODIFIERS="ctrl"` + "\n"; 
+macro +=  `URL GOTO=https://mail.google.com/mail/u/0/#inbox?compose=new` + "\n"; 
+macro +=  `WAIT SECONDS=7` + "\n"; 
+macro +=  `SET !CLIPBOARD {{!COL6}}` + "\n"; 
+macro +=  `EVENT TYPE=CLICK SELECTOR="input[aria-autocomplete='list'][aria-haspopup='listbox'][role='combobox']" BUTTON=0` + "\n"; 
+macro +=  `EVENT TYPE=KEYPRESS SELECTOR="input[aria-autocomplete='list'][aria-haspopup='listbox'][role='combobox']" CHAR="v" MODIFIERS="ctrl"` + "\n"; 
+macro +=  `SET !CLIPBOARD "Re: Referral"` + "\n"; 
+macro +=  `EVENT TYPE=CLICK SELECTOR="input[name='subjectbox']" BUTTON=0` + "\n"; 
+macro +=  `EVENT TYPE=KEYPRESS SELECTOR="input[name='subjectbox']" CHAR="v" MODIFIERS="ctrl"` + "\n"; 
+macro +=  `SET !CLIPBOARD {{emailbody}}` + "\n"; 
+macro +=  `EVENT TYPE=CLICK SELECTOR="div[aria-label='Message Body']" BUTTON=0` + "\n"; 
+macro +=  `EVENT TYPE=KEYPRESS SELECTOR="div[aria-label='Message Body']" CHAR="v" MODIFIERS="ctrl"` + "\n"; 
+macro +=  `WAIT SECONDS=3` + "\n"; 
+macro +=  `TAG POS=1 TYPE=DIV ATTR=ROLE:button&&TXT:*Send*` + "\n"; 
+macro +=  `WAIT SECONDS=10` + "\n"; 
+
+var start = Number(prompt("Input Start Line (First row is 2, because 1 is header)", 2));
+var end = Number(prompt("Input End Line", 100));
+var comment = prompt("Input IG Comment Text", "Hey I sent you a private message about some referrals for this week. Can you get back to me asap about that so that I don't need to find another realtor?");
+var dm = prompt("Input IG DM Text", "Hey I have a flood of referrals if you can handle then. What's your availability for showings like this weeks?");
+var emailbody = prompt("Input Email Message", "Hey, I have some referral i'm trying to send you this week. What's your availability?");
+var file = "Fiverr_fajob99_SendMessageIgAndEmail.csv";
+
+for(var i = start; i <= end; i++){
+    iimDisplay("Processing Row : " + i);
+    iimSet('file', file);
+    iimSet('i', i);
+    iimSet('comment', comment);
+    iimSet('dm', dm);
+    iimSet('emailbody', emailbody);
+    iimPlay(macro);    
+}
+
+alert("DONE!!!");

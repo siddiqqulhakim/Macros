@@ -1,0 +1,2 @@
+SET !EXTRACT "Oct 30, 2022"
+SET Day1 EVAL("var add = 1; var result = new Date(); var resultText = ''; var extract = new Date('{{!EXTRACT}}').setHours(0,0,0,0); var today = new Date().setHours(0,0,0,0); if(today > extract){ result.setDate(new Date(today).getDate() + add); } else {result = new Date(extract); result.setDate(new Date(extract).getDate() + add);} resultText = result.toLocaleString('en-US', {month: 'short'}) + ' ' + result.getDate() + ', ' + result.getFullYear(); resultText;")

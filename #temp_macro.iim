@@ -1,0 +1,37 @@
+SET fileDataSource D:\CODE\iMacros\Macros\WA_6285649865232\WordpressEditor\input_text.csv
+SET i 2
+SET !DATASOURCE {{fileDataSource}}
+SET !DATASOURCE_LINE {{i}}
+URL GOTO = {{!COL1}}
+TAG POS=1 TYPE=A ATTR=TXT:"*Edit Post*"
+
+WAIT SECONDS=2
+TAG POS=1 TYPE=TEXTAREA ATTR=id:"content" EXTRACT=TXT
+SET textPertama {{!EXTRACT}}
+SET !EXTRACT NULL
+TAG POS=1 TYPE=TEXTAREA ATTR=id:"content" CONTENT=""
+
+TAG POS=1 TYPE=BUTTON ATTR=TXT:"*Add Media*"
+WAIT SECONDS=2
+TAG POS=1 TYPE=SELECT ATTR=id:"media-attachment-filters" CONTENT=%uploaded
+WAIT SECONDS=2
+
+EVENT TYPE=CLICK XPATH="(//li[@class='attachment save-ready'])[1]" MODIFIERS="ctrl"
+EVENT TYPE=CLICK XPATH="(//li[@class='attachment save-ready'])[1]" MODIFIERS="ctrl"
+EVENT TYPE=CLICK XPATH="(//li[@class='attachment save-ready'])[1]" MODIFIERS="ctrl"
+
+TAG POS=1 TYPE=BUTTON ATTR=TXT:"Insert into post"
+WAIT SECONDS=2
+TAG POS=1 TYPE=TEXTAREA ATTR=id:"content" EXTRACT=TXT
+SET images {{!EXTRACT}}
+SET !EXTRACT NULL
+TAG POS=1 TYPE=TEXTAREA ATTR=id:"content" CONTENT=""
+
+TAB OPEN
+TAB T=2
+URL GOTO=file:///{{!COL2}}
+TAG POS=1 TYPE=PRE ATTR=TXT:* EXTRACT=TXT
+SET textKedua {{!EXTRACT}}
+SET !EXTRACT NULL
+TAB CLOSE
+TAB T=1

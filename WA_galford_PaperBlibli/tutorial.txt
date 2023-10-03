@@ -1,0 +1,15 @@
+GENERAL
+1. Please download firefox 56.0 & iMacros 8.9.7 from link below
+- Firefox Setup 56.0 32bit : https://drive.google.com/file/d/1WZTM-vopaZzB7RZ8ezco_2byqGpnpdkg/view?usp=sharing
+- Firefox Setup 56.0 64bit : https://drive.google.com/file/d/15i2MlGkTpA8wtXO36sQFTU3dFmzx_0uh/view?usp=sharing
+- iMacros 8.9.7 : https://drive.google.com/file/d/12-6CmAk7j2_rL3aBUN4gbtZimzCa4QCx/view?usp=sharing
+
+2. Install the firefox and imacros, DON'T FORGET TO TURN OFF THE AUTO UPDATE! Install iMacros by drag n drop the imacros_for_firefox-8.9.7-fx.xpi into firefox
+3. Place the script file in iMacros\Macros (usually located in Document/iMacros/Macros)
+
+HOW TO USE:
+1. Open mozilla, login paper.id
+2. Open imacros
+3. On the bottom of iMacros (Repeat Macro -> Max field), you can enter how many payment code that you want to generate
+4. Click Play(Loop)
+5. The payment code will be saved in iMacros/Datasource named kode_pembayaran.txt

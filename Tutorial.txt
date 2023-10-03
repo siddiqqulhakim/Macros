@@ -1,0 +1,25 @@
+GENERAL 
+HOW TO INSTALL FIREFOX + IMACROS : https://youtu.be/QnpI45ovuEU
+HOW TO INSTALL PALE MOON + IMACROS : https://youtu.be/dV_5FCOVGJY
+WHERE TO PUT THE SCRIPT FILE OR DATA FILE : https://youtu.be/DbzVUJghcK0
+
+1. Download Link
+- Firefox Setup 56.0 32bit : https://drive.google.com/file/d/1WZTM-vopaZzB7RZ8ezco_2byqGpnpdkg/view?usp=sharing
+- Firefox Setup 56.0 64bit : https://drive.google.com/file/d/15i2MlGkTpA8wtXO36sQFTU3dFmzx_0uh/view?usp=sharing
+- iMacros 8.9.7 : https://drive.google.com/file/d/12-6CmAk7j2_rL3aBUN4gbtZimzCa4QCx/view?usp=sharing
+- Pale Moon : https://www.palemoon.org/download.shtml
+
+2. Place your imacros script file in iMacros\Macros
+3. Place your source file in iMacros\Datasources folder (Only if exists)
+
+HOW TO USE: https://youtu.be/2pakvR7Ur1s (Read the description too)
+
+---------------------------------------------------------------
+
+HOW TO INSTALL PALE MOON + IMACROS : https://youtu.be/dV_5FCOVGJY
+- iMacros 8.9.7 : https://drive.google.com/file/d/12-6CmAk7j2_rL3aBUN4gbtZimzCa4QCx/view?usp=sharing
+- Pale Moon : https://www.palemoon.org/download.shtml
+
+WHERE TO PUT THE SCRIPT FILE OR DATA FILE : https://youtu.be/DbzVUJghcK0
+
+TUTORIAL : Videos attached
