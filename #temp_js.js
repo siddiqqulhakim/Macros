@@ -1,24 +1,3 @@
-var paper_login;
-paper_login =  "CODE:";
-paper_login +=  "SET !REPLAYSPEED MEDIUM" + "\n"; 
-paper_login +=  "SET !ERRORIGNORE NO" + "\n"; 
-paper_login +=  "SET !EXTRACT_TEST_POPUP NO" + "\n"; 
-paper_login +=  "ONDIALOG POS=1 BUTTON=OK CONTENT=" + "\n"; 
-paper_login +=  "TAB OPEN" + "\n"; 
-paper_login +=  "TAB T=2" + "\n"; 
-paper_login +=  "TAB CLOSEALLOTHERS" + "\n"; 
-paper_login +=  "TAB T=1" + "\n"; 
-paper_login +=  "URL GOTO=https://www.paper.id/webappv1/#/invoicer/finance/digital-payment-out/payout" + "\n"; 
-paper_login +=  "WAIT SECONDS=3" + "\n"; 
-paper_login +=  `EVENTS TYPE=KEYPRESS SELECTOR="input[name='email']" CHARS="laurabaker747@gmail.com"` + "\n"; 
-paper_login +=  "TAG POS=1 TYPE=BUTTON ATTR=TXT:Selanjutnya" + "\n"; 
-paper_login +=  "SET !ENCRYPTION NO" + "\n"; 
-paper_login +=  `EVENTS TYPE=KEYPRESS SELECTOR="input[data-cy='password']" CHARS="Anak12345"` + "\n"; 
-paper_login +=  "TAG POS=1 TYPE=BUTTON ATTR=TXT:Masuk" + "\n"; 
-paper_login +=  "WAIT SECONDS=2" + "\n"; 
-paper_login +=  "TAB OPEN" + "\n"; 
-paper_login +=  "TAB T=2" + "\n"; 
-paper_login +=  "TAB CLOSEALLOTHERS" + "\n"; 
-paper_login +=  "TAB T=1" + "\n"; 
-paper_login +=  "URL GOTO=https://www.paper.id/webappv1/#/invoicer/finance/digital-payment-out/payout" + "\n"; 
-paper_login +=  "WAIT SECONDS=3" + "\n"; 
+﻿var js = '(function(){var apiUrl="https://registrasi.tri.co.id/api/v1/registericcid";var requestData={"msisdn":"62895320603125","nik":"3323035501880001","kk":"3323092912150002","motherName":"mo","iccid":"2215"};var xhr=new XMLHttpRequest();xhr.open("POST",apiUrl,true);xhr.setRequestHeader("Content-Type","application/json;charset=UTF-8");xhr.onreadystatechange=function(){if(xhr.readyState==4&&xhr.status==200){console.log("Request successful. Response:",xhr.responseText);}else if(xhr.readyState==4){console.error("Request failed. Status:",xhr.status,"Response:",xhr.responseText);}};var jsonData=JSON.stringify(requestData);xhr.send(jsonData);})();';
+
+iimPlayCode(js);
